@@ -1,88 +1,72 @@
-/* ——— 1  BASE ——— */
-:root {
-  --bg: #0f0f17;
-  --bg-card: #181826;
-  --text: #f0f0ff;
-  --accent: #47c2ff;
-  --accent-2: #806bff;
-  --radius: 10px;
-  --font-main: "Inter", system-ui, sans-serif;
+/* ——  CORE THEME  —— */
+:root{
+  --bg:#101322;
+  --card:#181c2f;
+  --text:#f2f5ff;
+  --accent:#4cc9ff;
+  --accent2:#845ef7;
+  --radius:12px;
+  --font:"Inter",system-ui,sans-serif;
 }
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap');
-
-* {box-sizing:border-box;}
-body {
-  margin: 0 auto;
-  max-width: 900px;
-  padding: 2rem 1rem 4rem;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-main);
-  line-height: 1.55;
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font);
+  line-height:1.6;
+  max-width:960px;
+  margin:0 auto;
+  padding:2.5rem 1rem 4rem;
 }
+h1,h2{font-weight:900;line-height:1.2;margin-bottom:1rem}
+h1.site-title{font-size:clamp(2.2rem,4vw,3rem);text-align:center;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+h2{font-size:clamp(1.4rem,3vw,2rem)}
+.tagline{text-align:center;font-size:1rem;opacity:.85;margin-bottom:2.5rem}
+ol{margin-left:1.4rem;margin-top:.8rem}
+li{margin-bottom:.8rem}
 
-/* ——— 2  TYPO & LAYOUT ——— */
-h1,h2,h3 {font-weight:900;margin:0 0 1rem;line-height:1.2;}
-h1 {font-size: 2.8rem;}
-h2 {font-size: 1.8rem;}
-h3 {font-size: 1.4rem;}
-p {margin: .5rem 0 1.2rem;}
-.tagline {opacity:.9;font-weight:600;}
-
-header {text-align:center;margin-bottom:2.5rem;}
-nav {margin:1rem 0;}
-nav a {
-  color: var(--accent);
-  text-decoration:none;
-  margin:0 .5rem;
+/* ——  TABS  —— */
+.tab-bar{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:2rem}
+.tab{
+  padding:.5rem 1rem;
+  border:none;
+  border-radius:var(--radius);
+  background:#1f2338;
+  color:var(--text);
   font-weight:600;
+  cursor:pointer;
+  transition:background .25s;
 }
-nav a:hover {text-decoration:underline;}
+.tab:hover{background:#262b44}
+.tab.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
 
-.accent {color: var(--accent);}
-.cta {
+/* ——  PANELS  —— */
+.panel{display:none;animation:fade .3s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.panel h2{margin-bottom:.6rem}
+.panel ol li code{background:#262b44;padding:.1rem .3rem;border-radius:4px;color:var(--accent)}
+
+/* ——  CTA  —— */
+.cta{
   display:inline-block;
-  background: linear-gradient(135deg,var(--accent),var(--accent-2));
-  color:#fff;
-  padding:.7rem 1.4rem;
-  border-radius: var(--radius);
+  margin-top:1.2rem;
+  padding:.8rem 1.6rem;
   font-weight:600;
-  text-decoration:none;
-  box-shadow:0 3px 10px rgba(0,0,0,.4);
+  border-radius:var(--radius);
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;text-decoration:none;
+  transition:opacity .25s,transform .25s;
 }
-.cta:hover {opacity:.9;}
+.cta:hover{opacity:.9;transform:translateY(-2px)}
 
-footer {text-align:center;margin-top:4rem;font-size:.85rem;opacity:.6;}
+/* ——  FOOTER  —— */
+footer{text-align:center;margin-top:4rem;font-size:.85rem;opacity:.6}
 
-/* ——— 3  HERO ——— */
-.hero {text-align:center;margin:3rem 0 4rem;}
-.hero h2 {color:var(--accent-2);margin-bottom:.5rem;}
-
-/* ——— 4  PROMPTS ——— */
-.prompt-list {padding-left:1.2rem;}
-.prompt-list li {margin:.6rem 0;}
-
-/* ——— 5  PACK BOX ——— */
-.pack {
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  padding:1.5rem 1.5rem 2rem;
-  margin-top:2.5rem;
-  text-align:center;
+/* ——  RESPONSIVE  —— */
+@media(max-width:550px){
+  body{padding:1.8rem .8rem 3.5rem}
+  .tab{flex:1 1 45%;justify-content:center}
 }
-
-/* ——— 6  TOOL TABLE ——— */
-.tool-table {
-  width:100%;
-  border-collapse:collapse;
-  margin-top:2rem;
-}
-.tool-table th,
-.tool-table td {
-  border:1px solid #2f2f40;
-  padding:.6rem .8rem;
-}
-.tool-table th {background:#27273a;text-align:left;}
-.tool-table tr:nth-child(even){background:#1b1b2a;}
-.tool-table a {color:var(--accent);}
