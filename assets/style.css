@@ -1,72 +1,75 @@
-/* ——  CORE THEME  —— */
+/* ——  PALETTE  —— */
 :root{
-  --bg:#101322;
-  --card:#181c2f;
-  --text:#f2f5ff;
-  --accent:#4cc9ff;
-  --accent2:#845ef7;
-  --radius:12px;
-  --font:"Inter",system-ui,sans-serif;
+  --bg:#f7f9fc;
+  --text:#1d2330;
+  --card:#ffffff;
+  --shadow:0 6px 18px rgba(0,0,0,.08);
+  --radius:16px;
+  --font:"Poppins",system-ui,sans-serif;
 }
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
 
+/* ——  RESET  —— */
 *{box-sizing:border-box;margin:0;padding:0}
 body{
+  font-family:var(--font);
   background:var(--bg);
   color:var(--text);
-  font-family:var(--font);
-  line-height:1.6;
-  max-width:960px;
-  margin:0 auto;
-  padding:2.5rem 1rem 4rem;
+  line-height:1.65;
+  padding:0 1rem 4rem;
 }
-h1,h2{font-weight:900;line-height:1.2;margin-bottom:1rem}
-h1.site-title{font-size:clamp(2.2rem,4vw,3rem);text-align:center;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
-h2{font-size:clamp(1.4rem,3vw,2rem)}
-.tagline{text-align:center;font-size:1rem;opacity:.85;margin-bottom:2.5rem}
-ol{margin-left:1.4rem;margin-top:.8rem}
-li{margin-bottom:.8rem}
 
-/* ——  TABS  —— */
-.tab-bar{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:2rem}
-.tab{
-  padding:.5rem 1rem;
-  border:none;
-  border-radius:var(--radius);
-  background:#1f2338;
-  color:var(--text);
-  font-weight:600;
-  cursor:pointer;
-  transition:background .25s;
+/* ——  HERO  —— */
+.hero{
+  text-align:center;
+  padding:4rem 1rem 5rem;
+  background:linear-gradient(135deg,#7af,#9df,#bff);
+  border-radius:0 0 60px 60px/0 0 40px 40px;
+  box-shadow:var(--shadow);
 }
-.tab:hover{background:#262b44}
-.tab.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
-
-/* ——  PANELS  —— */
-.panel{display:none;animation:fade .3s ease}
-.panel.active{display:block}
-@keyframes fade{from{opacity:0}to{opacity:1}}
-.panel h2{margin-bottom:.6rem}
-.panel ol li code{background:#262b44;padding:.1rem .3rem;border-radius:4px;color:var(--accent)}
-
-/* ——  CTA  —— */
+.logo{
+  font-size:clamp(2.5rem,4vw,3.5rem);
+  font-weight:800;
+  color:#fff;
+  letter-spacing:-.5px;
+}
+.tagline{
+  margin-top:.7rem;
+  font-size:1.125rem;
+  color:#f0f6ff;
+}
 .cta{
   display:inline-block;
-  margin-top:1.2rem;
-  padding:.8rem 1.6rem;
+  margin-top:1.8rem;
+  padding:.9rem 1.8rem;
+  background:#fff;
+  color:#3b60ff;
   font-weight:600;
+  border-radius:40px;
+  text-decoration:none;
+  transition:transform .25s,box-shadow .25s;
+}
+.cta:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
+
+/* ——  GRID  —— */
+#grid{
+  margin-top:-80px;               /* pulls cards upward into hero curve */
+  display:grid;
+  gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+
+/* ——  CARD  —— */
+.card{
+  background:var(--card);
   border-radius:var(--radius);
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;text-decoration:none;
-  transition:opacity .25s,transform .25s;
+  padding:1.7rem 1.6rem 2.1rem;
+  box-shadow:var(--shadow);
+  transition:transform .25s,box-shadow .25s;
 }
-.cta:hover{opacity:.9;transform:translateY(-2px)}
-
-/* ——  FOOTER  —— */
-footer{text-align:center;margin-top:4rem;font-size:.85rem;opacity:.6}
-
-/* ——  RESPONSIVE  —— */
-@media(max-width:550px){
-  body{padding:1.8rem .8rem 3.5rem}
-  .tab{flex:1 1 45%;justify-content:center}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 26px rgba(0,0,0,.12);
 }
+.card h2{
+  marg
