@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>GPT Univers – Prompt Hub</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <title>Quote-to-Poster · GPT Univers</title>
+
+  <!-- Tailwind CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Page meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+<body class="min-h-screen bg-slate-50 flex flex-col">
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-indigo-500 to-cyan-500 py-10 text-center text-white">
+    <h1 class="text-4xl font-extrabold tracking-tight">🎨 Quote-to-Poster</h1>
+    <p class="mt-2 text-lg opacity-90">Turn any quote into a share-worthy image in one click</p>
+  </header>
 
-<body>
-<header class="hero">
-  <h1 class="logo">GPT Univers</h1>
-  <p class="tagline">
-    A colourful collection of high-impact prompts<br>
-    – organised by use-case and ready to copy –
-  </p>
-  <a class="cta" href="#grid">👇 Browse Prompt Packs</a>
-</header>
+  <!-- FORM -->
+  <main class="flex-grow container mx-auto px-4 py-10">
+    <form id="posterForm" class="max-w-xl mx-auto space-y-6">
+      <textarea
+        id="quote"
+        required
+        rows="4"
+        placeholder="Paste or type your quote here…"
+        class="w-full rounded-md border border-slate-300 p-4 text-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+      ></textarea>
 
-<main id="grid">
-  <!-- 1 Course Prompts -->
-  <article class="card gradient-blue">
-    <h2>🎓 Course-Creation</h2>
-    <ol>
-      <li><b>Lesson-Outline Wizard –</b> “Create a six-module syllabus on {topic} with objectives & micro-quiz.”</li>
-      <li><b>Engaging Hook –</b> “Write a 40-word story showing why {skill} will matter in 2030.”</li>
-      <li><b>Visual-Aid Brief –</b> “Suggest 1 infographic + 1 demo video for Module {n}.”</li>
-      <li><b>MCQ Generator –</b> “Generate 5 Bloom ‘Apply’ multiple-choice questions.”</li>
-      <li><b>Capstone Prompt –</b> “Draft a 3-hour hands-on project with peer-review rubric.”</li>
-    </ol>
-  </article>
+      <div class="flex items-center gap-4">
+        <label class="font-medium">Palette:</label>
+        <select id="palette" class="flex-1 rounded-md border border-slate-300 p-2">
+          <option value="sunset">Sunset</option>
+          <option value="mint">Mint</option>
+          <option value="royal">Royal</option>
+          <option value="pastel">Pastel</option>
+          <option value="mono">Mono</option>
+        </select>
+        <button
+          type="submit"
+          class="inline-flex items-center gap-2 rounded-md bg-indigo-600 px-5 py-3 font-semibold text-white hover:bg-indigo-700"
+        >
+          Generate ➜
+        </button>
+      </div>
+    </form>
 
-  <!-- 2 Email Marketing Prompts -->
-  <article class="card gradient-pink">
-    <h2>📧 Email Marketing</h2>
-    <ol>
-      <li><b>Cold Outreach –</b> “120-word email to a {role} at {company}; helpful tone; CTA = 15-min call.”</li>
-      <li><b>Win-Back –</b> “Friendly ‘we miss you’ email; include 1 personalised stat.”</li>
-      <li><b>Abandoned Cart –</b> “3-email sequence + 10 % time-limited discount.”</li>
-      <li><b>Preview Text –</b> “Subject ≤45 chars, preview ≤90 chars that tease blog post.”</li>
-      <li><b>A/B Variants –</b> “Give 3 alternative subject lines with rising curiosity.”</li>
-    </ol>
-  </article>
+    <!-- RESULT -->
+    <section id="result" class="mt-10 hidden text-center">
+      <p class="mb-4 font-medium text-slate-700">Right-click → “Save image as…”</p>
+      <img id="posterImg" class="mx-auto rounded-lg shadow-lg max-w-full" />
+    </section>
 
-  <!-- 3 SEO Prompts -->
-  <article class="card gradient-green">
-    <h2>📈 SEO Copy</h2>
-    <ol>
-      <li><b>Keyword Cluster –</b> “Build a topical map for {keyword}; group by intent & difficulty.”</li>
-      <li><b>Outline Builder –</b> “H1-H3 outline (1 700 words) matching ‘People also ask’.”</li>
-      <li><b>Snippet Optimiser –<
+    <!-- Loader -->
+    <div id="loader" class="mt-10 flex justify-center hidden">
+      <svg class="h-10 w-10 animate-spin text-indigo-600" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/>
+        <path d="M22 12a10 10 0 0 1-10 10" stroke="currentColor" stroke-width="4" fill="none"/>
+      </svg>
+    </div>
+  </main>
+
+  <footer class="py-6 text-center text-sm text-slate-500">
+    © 2025 GPT Univers — powered by Replicate
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
