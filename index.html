@@ -2,70 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>GPT Univers — Home</title>
+  <title>GPT Univers · Prompt Hub</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-<!-- ========== HEADER ========== -->
 <header>
-  <h1><span class="accent">GPT Univers</span></h1>
-  <p class="tagline">Your FR–AR hub for everything GPT</p>
-
-  <nav>
-    <a href="prompts/">Prompts Pro</a>
-    <a href="tools/">AI Tools</a>
-    <a href="#newsletter">Le Brief GPT</a>
-  </nav>
+  <h1 class="site-title">GPT Univers</h1>
+  <p class="tagline">Premium English-only prompt packs • 5 specialised sections</p>
 </header>
 
-<!-- ========== HERO ========== -->
 <main>
-  <section class="hero">
-    <h2>Explore • Learn • Create</h2>
-    <p>Hand-picked prompts, curated AI tools, and a weekly newsletter — all in English, French & Arabic.</p>
-    <a class="cta" href="prompts/">🚀 Grab 10 Free Prompts</a>
+  <!-- ===== Tabs ===== -->
+  <nav class="tab-bar" id="tabs">
+    <button class="tab active" data-target="courses">🎓 Course-Creation</button>
+    <button class="tab" data-target="email">📧 Email Marketing</button>
+    <button class="tab" data-target="seo">📈 SEO Copy</button>
+    <button class="tab" data-target="social">💬 Social Media</button>
+    <button class="tab" data-target="legal">⚖️ Legal & Compliance</button>
+  </nav>
+
+  <!-- ===== Content panels ===== -->
+  <section class="panel active" id="courses">
+    <h2>Course-Creation Prompts</h2>
+    <ol>
+      <li><strong>Lesson-Outline Wizard</strong> – “Create a 6-module syllabus on <em>{topic}</em>. Each module needs 3 learning objectives & a 90-second micro-quiz.”</li>
+      <li><strong>Engaging Hook</strong> – “Write a 40-word story that illustrates why <em>{skill}</em> will matter in 2030.”</li>
+      <li><strong>Visual-Aid Brief</strong> – “Suggest one infographic & one short demo video for Module {number}, with clear production notes.”</li>
+      <li><strong>Knowledge-Check MCQ</strong> – “Generate 5 multiple-choice questions (1 correct, 3 distractors) aimed at Bloom’s ‘Application’ level.”</li>
+      <li><strong>Capstone Project Prompt</strong> – “Draft a hands-on project that takes 3 hours, uses real-world data, and includes a peer-review rubric.”</li>
+    </ol>
   </section>
 
-  <!-- ========== NEWSLETTER ========== -->
-  <section id="newsletter" class="newsletter">
-    <h3>Subscribe to <em>Le Brief GPT</em></h3>
-    <p>Every Sunday you’ll receive expert insights covering all ten sections below.</p>
-
-    <ol class="brief-topics">
-      <li><strong>⚙️ Prompt-engineering hacks —</strong> Stop wasting tokens. We show you how to chain <em>roles, tasks, formats</em> in one shot and add “guard-rails” for consistent outputs. A live demo illustrates why adding <code>##Constraints:</code> trims hallucinations by <strong>27 %</strong> in GPT-4o.</li>
-
-      <li><strong>📰 AI policy &amp; ethics roundup —</strong> EU AI Act enters Phase 2: high-risk systems must log every decision path. Morocco’s Digital Trust Authority hints at similar clauses for public LLMs. We unpack what this means for SaaS founders shipping to EU + MENA.</li>
-
-      <li><strong>🛠️ New productivity tools —</strong> Three arrivals to test this week: <em>Arc Max</em> (AI browser sidekick), <em>Fireflies 3.0</em> (meeting transcriber now in Arabic), and <em>Liner</em> (Google-result summaries). Pros, cons, and a “skip or adopt” verdict in 90 seconds.</li>
-
-      <li><strong>📈 SEO &amp; content tactics —</strong> Google’s March 2025 Core Update rewards expert quotes. Learn to prompt GPT-4 to craft a <em>contrarian</em> quote, then verify with scholarly sources so you still satisfy E-E-A-T. Includes a ready-made SERP feature checklist.</li>
-
-      <li><strong>🎨 Gen-AI for designers —</strong> Figma’s new “Make Design” action can turn a hand-drawn wireframe into a themed UI in 12 s. We recreate the magic and share a prompt pack that keeps output WCAG-compliant.</li>
-
-      <li><strong>💼 FR/AR case studies —</strong> How <em>Attijariwafa Bank</em> cut call-centre wait time by 34 % using a bilingual GPT assistant trained on support tickets. We break down fine-tuning costs and post-launch KPIs.</li>
-
-      <li><strong>🤖 Automation workflows —</strong> Build a “Zero-touch Lead Router”: new Stripe sale → Zapier AI classifies buyer intent → Pipedrive deal auto-created in FR, AR &amp; EN. Tutorial + JSON template inside.</li>
-
-      <li><strong>🧑‍⚖️ Legal &amp; compliance tips —</strong> “Can I store customer prompts?” Yes — if you hash or pseudonymise PII first. We outline a 3-step retention policy satisfying GDPR and Morocco’s Law 09-08.</li>
-
-      <li><strong>💸 Monetisation playbooks —</strong> A solo-founder sells prompt packs on Gumroad and nets <strong>4 600 € MRR</strong> in 90 days. Traffic sources, pricing tests, upsells, and landing-page copy dissected.</li>
-
-      <li><strong>📚 Research-paper digest —</strong> “Sparse Mixture of Experts for Low-Resource Arabic” (ICLR 2025) shows a 2.8× speed-up on TPU-v5 with parity to GPT-3.5 on Arabic MMLU. We translate the findings and explain MoE cost benefits.</li>
+  <section class="panel" id="email">
+    <h2>Email-Marketing Prompts</h2>
+    <ol>
+      <li><strong>Cold Outreach</strong> – “Write a 120-word email to a <em>{role}</em> at <em>{company}</em> about <em>{offer}</em>; tone = helpful, CTA = 15-min call.”</li>
+      <li><strong>Re-engagement</strong> – “Craft a friendly ‘we miss you’ email for lapsed users; include 1 personalised stat from their past activity.”</li>
+      <li><strong>Abandoned Cart</strong> – “Generate a 3-email sequence; include dynamic product images & a 10 % time-limited discount.”</li>
+      <li><strong>Newsletter Preview</strong> – “Write a subject line ≤45 chars and preview text ≤90 chars teasing the latest blog post.”</li>
+      <li><strong>A/B Variant Generator</strong> – “Give me three alternative subject lines with increasing curiosity but same brand voice.”</li>
     </ol>
+  </section>
 
-    
-    <p style="margin-top:1.6rem">
-  <a class="cta" href="https://gptunivers.substack.com" target="_blank">
-    Join the newsletter
-  </a>
-</p>
+  <section class="panel" id="seo">
+    <h2>SEO-Copy Prompts</h2>
+    <ol>
+      <li><strong>Keyword Cluster</strong> – “Produce a topical map for <em>{keyword}</em>; group terms by search intent & difficulty.”</li>
+      <li><strong>Outline Builder</strong> – “Create an H1-H3 outline (1 700-word target) that matches Google’s ‘People also ask’ for <em>{keyword}</em>.”</li>
+      <li><strong>Snippet Optimiser</strong> – “Rewrite the intro paragraph to capture a featured snippet. Max 40 words, definition style.”</li>
+      <li><strong>Expert Quote Prompt</strong> – “Draft a contrarian expert quote that supports <em>{position}</em>, includes one data point & citation.”</li>
+      <li><strong>Internal-Link Plan</strong> – “List 5 anchor texts that should link to this article from existing URLs <em>[list]</em>.”</li>
+    </ol>
+  </section>
+
+  <section class="panel" id="social">
+    <h2>Social-Media Prompts</h2>
+    <ol>
+      <li><strong>LinkedIn Carousel</strong> – “Outline 7 slides that teach <em>{concept}</em>; include hook & call-to-comment.”</li>
+      <li><strong>Tweet Storm</strong> – “Write a 6-tweet thread; hook Tweet 1, value Tweets 2-5, CTA resource Tweet 6.”</li>
+      <li><strong>Instagram Reel Script</strong> – “30-second script introducing <em>{tip}</em>; include B-roll suggestions.”</li>
+      <li><strong>Hashtag Generator</strong> – “Suggest 8 niche hashtags for <em>{topic}</em> in English & French.”</li>
+      <li><strong>Pain-Agitate-Solve Post</strong> – “Craft a PAS Facebook ad for <em>{problem}</em>; 90 chars headline, 125 chars body.”</li>
+    </ol>
+  </section>
+
+  <section class="panel" id="legal">
+    <h2>Legal & Compliance Prompts</h2>
+    <ol>
+      <li><strong>GDPR-Risk Scan</strong> – “Identify potential GDPR issues in this privacy notice & suggest fixes in a two-column table.”</li>
+      <li><strong>Contract Clause Checker</strong> – “Does this NDA protect trade secrets under Moroccan Law 17-97? Highlight gaps.”</li>
+      <li><strong>Policy Summary</strong> – “Summarise the attached policy in ≤200 words and add 3 compliance KPIs.”</li>
+      <li><strong>Terms v2 Diff</strong> – “Compare v1 & v2 of these Terms of Service; list only material changes.”</li>
+      <li><strong>Risk Matrix</strong> – “Create a 3×3 risk matrix for launching an AI chatbot in healthcare; rate impact vs likelihood.”</li>
+    </ol>
   </section>
 </main>
 
-<!-- ========== FOOTER ========== -->
-<footer>
-  © 2025 GPT Univers
-</footer>
+<!-- ===== Tiny JS for tab switching ===== -->
+<script>
+document.querySelectorAll('.tab').forEach(btn =>
+  btn.addEventListener('click', () => {
+    // activate tab
+    document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    // show panel
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById(btn.dataset.target).classList.add('active');
+    // scroll into view on mobile
+    document.getElementById(btn.dataset.target).scrollIntoView({behavior:'smooth', block:'start'});
+  })
+);
+</script>
+
+<footer>© 2025 GPT Univers</footer>
 </body>
 </html>
