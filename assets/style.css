@@ -1,3 +1,88 @@
-body {font-family:sans-serif; margin:2rem auto; max-width:800px; line-height:1.5;}
-nav a {margin-right:.5rem;}
+/* ——— 1  BASE ——— */
+:root {
+  --bg: #0f0f17;
+  --bg-card: #181826;
+  --text: #f0f0ff;
+  --accent: #47c2ff;
+  --accent-2: #806bff;
+  --radius: 10px;
+  --font-main: "Inter", system-ui, sans-serif;
+}
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap');
+
+* {box-sizing:border-box;}
+body {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 2rem 1rem 4rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  line-height: 1.55;
+}
+
+/* ——— 2  TYPO & LAYOUT ——— */
+h1,h2,h3 {font-weight:900;margin:0 0 1rem;line-height:1.2;}
+h1 {font-size: 2.8rem;}
+h2 {font-size: 1.8rem;}
+h3 {font-size: 1.4rem;}
+p {margin: .5rem 0 1.2rem;}
+.tagline {opacity:.9;font-weight:600;}
+
+header {text-align:center;margin-bottom:2.5rem;}
+nav {margin:1rem 0;}
+nav a {
+  color: var(--accent);
+  text-decoration:none;
+  margin:0 .5rem;
+  font-weight:600;
+}
+nav a:hover {text-decoration:underline;}
+
+.accent {color: var(--accent);}
+.cta {
+  display:inline-block;
+  background: linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#fff;
+  padding:.7rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 3px 10px rgba(0,0,0,.4);
+}
+.cta:hover {opacity:.9;}
+
+footer {text-align:center;margin-top:4rem;font-size:.85rem;opacity:.6;}
+
+/* ——— 3  HERO ——— */
+.hero {text-align:center;margin:3rem 0 4rem;}
+.hero h2 {color:var(--accent-2);margin-bottom:.5rem;}
+
+/* ——— 4  PROMPTS ——— */
+.prompt-list {padding-left:1.2rem;}
+.prompt-list li {margin:.6rem 0;}
+
+/* ——— 5  PACK BOX ——— */
+.pack {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding:1.5rem 1.5rem 2rem;
+  margin-top:2.5rem;
+  text-align:center;
+}
+
+/* ——— 6  TOOL TABLE ——— */
+.tool-table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:2rem;
+}
+.tool-table th,
+.tool-table td {
+  border:1px solid #2f2f40;
+  padding:.6rem .8rem;
+}
+.tool-table th {background:#27273a;text-align:left;}
+.tool-table tr:nth-child(even){background:#1b1b2a;}
+.tool-table a {color:var(--accent);}
